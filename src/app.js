@@ -9,8 +9,6 @@ function init() {
 	setupAppContent('#app');
 	setupToggleTheme('html', '#toggle-theme-btn');
 	setupToggleMenu('#menu', '#menu-btn');
-
-	console.log('hello?');
 }
 
 init();
