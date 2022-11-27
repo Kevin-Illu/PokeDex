@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer toggle-buttons {
+	#first-icon {
+		@apply block;
+	}
+
+	#second-icon {
+		@apply hidden;
+	}
+
+	.active #first-icon {
+		@apply hidden;
+	}
+
+	.active #second-icon {
+		@apply block;
+	}
+}
