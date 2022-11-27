@@ -11,7 +11,7 @@ export default function setupAppContent(app) {
 						<form class="lg:px-6">
 							<input
 								type="search"
-								placeholder="Busca un pokemon"
+								placeholder="Search by Name"
 								class="transition-color py-3 w-[100%] rounded-full outline-none dark:bg-zinc-700 transition text-lg shadow-lg px-6 dark:text-zinc-300 font-semibold text-zinc-900 bg-neutral-100 hover:bg-neutral-200"
 							/>
 						</form>
