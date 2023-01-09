@@ -966,6 +966,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@types/canvas-confetti@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@types/canvas-confetti/-/canvas-confetti-1.6.0.tgz#c525f22f1042e73dec6a7e86c1f5bb0191c09fea"
+  integrity sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
@@ -1204,6 +1209,11 @@ caniuse-lite@^1.0.30001406:
   version "1.0.30001439"
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001439.tgz"
   integrity sha512-1MgUzEkoMO6gKfXflStpYgZDlFM7M/ck/bgfVCACO5vnAf0fXoNVHdWtqGU+MYca+4bL9Z5bpOVmR33cWW9G2A==
+
+canvas-confetti@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/canvas-confetti/-/canvas-confetti-1.6.0.tgz#193f71aa8f38fc850a5ba94f59091a7afdb43ead"
+  integrity sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==
 
 chalk@^4.0.0:
   version "4.1.2"
@@ -2406,6 +2416,11 @@ react-dom@18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-iconly@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/react-iconly/-/react-iconly-2.2.5.tgz#32b9a1d66815ae6a421026694e7d16027248d87f"
+  integrity sha512-c9WO/2TJltmyCVGj+/mdJZFoldfzYA8uUPmcml03D6YlBVWsCN5gq5Vb2k95qmeg+vSqMRvC69yghZvM0T4lKQ==
 
 react-is@^16.13.1:
   version "16.13.1"

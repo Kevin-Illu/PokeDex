@@ -1,27 +1,25 @@
-import { Badge, Button, Card, Grid, Row, Text, useTheme } from "@nextui-org/react";
-import { useRouter } from "next/router";
-import { FC } from "react";
-import { SmallPokemon } from "../../interfaces";
+import { Grid, Card, Text, Badge, Row, useTheme } from "@nextui-org/react"
+import { useRouter } from "next/router"
+import { FC } from "react"
 
 interface Props {
-  pokemon: SmallPokemon;
+  id: number
 }
 
-export const PokemonCard: FC<Props> = ({ pokemon }) => {
+const FavoritePokemonCard: FC<Props> = ({ id }) => {
 
-  const { id, name, img } = pokemon;
-  const { theme } = useTheme();
   const router = useRouter();
+  const { theme } = useTheme();
 
-  const handleClick = () => {
-    router.push(`/pokemon/${id}`);
+  const onClick = () => {
+    router.push(`/pokemon/${id}`)
   }
 
   return (
-    <Grid xs={6} sm={3}>
+    <Grid key={id} xs={6} sm={3}>
       <Card
         isPressable
-        onClick={handleClick}
+        onClick={onClick}
         css={{
           height: 280,
         }}
@@ -30,9 +28,9 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
           backgroundColor: theme?.colors.accents4.value,
         }}>
           <Card.Image
-            src={img}
-            alt={name}
-            />
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+            alt={"hola"}
+          />
         </Card.Body>
         <Card.Footer
           isBlurred
@@ -43,10 +41,12 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
         >
           <Row wrap="wrap" justify="space-between" align="center">
             <Badge color="secondary">{id}</Badge>
-            <Text>{name}</Text>
+            <Text></Text>
           </Row>
         </Card.Footer>
       </Card>
     </Grid>
   )
 }
+
+export default FavoritePokemonCard;

@@ -1,27 +1,36 @@
-import { Button, Navbar, Text } from "@nextui-org/react";
 import Image from "next/image";
+import NextLink from "next/link";
+import { Navbar, Text, Link } from "@nextui-org/react";
 
 export const NavBar = () => {
   return (
     <Navbar isBordered variant={"floating"}>
       <Navbar.Brand>
         <Image
-          src={
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-          }
+          src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"}
           alt={"BrandIcon"}
           width={60}
           height={60}
-        />
-        <Text b color="inherit" hideIn="xs">
-          POKEDEX
-        </Text>
+          />
+        <NextLink href={'/'}>
+          <Text 
+            h1
+            size={20}
+            weight="bold"
+            css={{
+              margin: 0,
+              textGradient: "45deg, $blue600 -20%, $pink600 50%",
+            }}
+          >
+            Pokedex
+          </Text>
+        </NextLink>
       </Navbar.Brand>
       <Navbar.Content>
         <Navbar.Item>
-          <Button flat auto color={"secondary"}>
-            Favoritos
-          </Button>
+          <NextLink href={'/favorites'} passHref>
+            Favorites
+          </NextLink>
         </Navbar.Item>
       </Navbar.Content>
     </Navbar>
