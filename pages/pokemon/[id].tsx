@@ -119,7 +119,11 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                   alt={pokemon.name}
                   width={300}
                   height={300}
-                  src={pokemon.sprites.other?.dream_world.front_default || "none"}
+                  src={
+                    pokemon.sprites.other?.dream_world.front_default
+                    || pokemon.sprites.other?.["official-artwork"].front_default
+                    || pokemon.sprites.front_default
+                  }
                 />
               </Container>
             </Card>
@@ -169,16 +173,20 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                   />
                 </Card>
               </Grid>
-              <Grid>
-                <Card isHoverable variant="bordered">
-                  <Image
-                    width={100}
-                    height={100}
-                    alt={pokemon.name}
-                    src={pokemon.sprites.other?.["official-artwork"].front_default || "none"}
-                  />
-                </Card>
-              </Grid>
+              {
+                pokemon.sprites.other?.["official-artwork"].front_default && (
+                  <Grid>
+                    <Card isHoverable variant="bordered">
+                      <Image
+                        width={100}
+                        height={100}
+                        alt={pokemon.name}
+                        src={pokemon.sprites.other?.["official-artwork"].front_default}
+                      />
+                    </Card>
+                  </Grid>
+                )
+              }
             </Grid.Container>
           </Card.Body>
           <Card.Footer>
