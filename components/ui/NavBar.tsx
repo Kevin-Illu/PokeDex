@@ -7,13 +7,15 @@ export const NavBar = () => {
     <Navbar isBordered variant={"floating"}>
       <Navbar.Brand>
         <Image
-          src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"}
+          src={
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+          }
           alt={"BrandIcon"}
           width={60}
           height={60}
-          />
-        <NextLink href={'/'}>
-          <Text 
+        />
+        <NextLink href={"/"}>
+          <Text
             h1
             size={20}
             weight="bold"
@@ -28,7 +30,7 @@ export const NavBar = () => {
       </Navbar.Brand>
       <Navbar.Content>
         <Navbar.Item>
-          <NextLink href={'/favorites'} passHref>
+          <NextLink href={"/favorites"} passHref>
             Favorites
           </NextLink>
         </Navbar.Item>

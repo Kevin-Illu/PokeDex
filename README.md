@@ -1,5 +1,8 @@
 # PokeDex
 
+![pokemons](/public/img/pokemon.png)
+![pokemons](/public/img/pokemons.png)
+
 ## Getting Started
 
 First, run the development server:
