@@ -35,7 +35,7 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
 
     setIsShared(prev => !prev);
 
-    setTimeout(()=> {
+    setTimeout(() => {
       setIsShared(false);
     }, 1000);
   }
@@ -88,8 +88,8 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
                   >
                     {!isFavorite ? null : "en favoritos"}
                   </Button>
-                  <Button 
-                    auto 
+                  <Button
+                    auto
                     onClick={onShare}
                     ghost={isShared}
                     color={isShared ? "success" : "primary"}
@@ -118,6 +118,7 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
                 alignItems="center"
                 css={{ padding: "1rem 0" }}>
                 <Image
+                  alt={`${pokemon.name}`}
                   width={300}
                   height={300}
                   src={pokemon.sprites.other?.dream_world.front_default || "none"}
