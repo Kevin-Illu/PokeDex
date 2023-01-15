@@ -3,10 +3,7 @@ import { useRouter } from "next/router";
 import { Search } from "react-iconly"
 
 export const SearchBar = () => {
-  const {
-    value,
-    reset,
-    bindings, } = useInput("");
+  const {value, reset, bindings} = useInput("");
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,17 +24,15 @@ export const SearchBar = () => {
       <Spacer y={2} />
       <form onSubmit={handleSubmit}>
         <Input
-          value={value}
           name="search"
-          labelRight="Search"
           labelPlaceholder="Search pokemon by name or id"
-          type={'search'}
+          type='search'
           bordered
           color="primary"
           size="xl"
           width="100%"
-          onChange={bindings.onChange}
-          contentLeft={<Search set="bold" primaryColor="#0C61C6" />}
+          {...bindings}
+          contentRight={<Search set="bold" primaryColor="#0C61C6" />}
         />
       </form>
       <Spacer y={2} />
