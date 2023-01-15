@@ -20,7 +20,7 @@ export const Layout: FC<Props> = ({ children, title, current }) => {
         <meta name="author" content="Kevin Illu" />
         <meta name="description" content={`Informacion sobre el pokemon ${current || "Pikachu"}`} />
         <meta name="keywords" content={` ${title}, ${current || "Pikachu"}, pokemon, pokedex, next projects`} />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#0C61C6" />
 
         <meta property="og:title" content={`${title} es un pokemon...`} />
         <meta property="og:description" content={`Esta es informacion sobre ${title}`} />
