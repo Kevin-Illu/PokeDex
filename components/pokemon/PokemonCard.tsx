@@ -14,7 +14,7 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/pokemon/${id}`);
+    router.push(`/name/${pokemon.name}`);
   }
 
   return (
@@ -32,10 +32,9 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
           <Card.Image
             src={img}
             alt={name}
-            />
+          />
         </Card.Body>
         <Card.Footer
-          isBlurred
           css={{
             justifyItems: "flex-start",
             padding: "1.5rem .8rem"

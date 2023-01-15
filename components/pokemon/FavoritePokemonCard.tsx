@@ -1,4 +1,4 @@
-import { Grid, Card, Text, Badge, Row, useTheme } from "@nextui-org/react"
+import { Grid, Card, Text, Image, Badge, Row, useTheme } from "@nextui-org/react"
 import { useRouter } from "next/router"
 import { FC } from "react"
 
@@ -27,7 +27,7 @@ const FavoritePokemonCard: FC<Props> = ({ id }) => {
         <Card.Body css={{
           backgroundColor: theme?.colors.accents4.value,
         }}>
-          <Card.Image
+          <Image
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
             alt={"hola"}
           />
