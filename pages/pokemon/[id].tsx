@@ -33,7 +33,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
 
     setIsShared(prev => !prev);
 
-    setTimeout(()=> {
+    setTimeout(() => {
       setIsShared(false);
     }, 1000)
   }
@@ -86,14 +86,14 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                   >
                     {!isFavorite ? null : "en favoritos"}
                   </Button>
-                  <Button 
-                    auto 
+                  <Button
+                    auto
                     onClick={onShare}
                     ghost={isShared}
                     color={isShared ? "success" : "primary"}
                     icon={<People set="bold" primaryColor={isShared ? "white" : "black"} />}
                   >share</Button>
-                </div>               
+                </div>
               </Grid.Container>
               <Grid.Container gap={1}>
                 {pokemon.types.map((type, i) =>
@@ -120,7 +120,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                   width={300}
                   height={300}
                   src={pokemon.sprites.other?.dream_world.front_default || "none"}
-                  />
+                />
               </Container>
             </Card>
             <Grid.Container justify="center" alignItems="center">
@@ -136,7 +136,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                     height={100}
                     alt={pokemon.name}
                     src={pokemon.sprites.front_default}
-                    />
+                  />
                 </Card>
               </Grid>
               <Grid>
@@ -146,7 +146,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                     height={100}
                     alt={pokemon.name}
                     src={pokemon.sprites.back_default}
-                    />
+                  />
                 </Card>
               </Grid>
               <Grid>
@@ -156,7 +156,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                     height={100}
                     alt={pokemon.name}
                     src={pokemon.sprites.front_shiny}
-                    />
+                  />
                 </Card>
               </Grid>
               <Grid>
@@ -166,7 +166,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                     height={100}
                     alt={pokemon.name}
                     src={pokemon.sprites.back_shiny}
-                    />
+                  />
                 </Card>
               </Grid>
               <Grid>
@@ -176,7 +176,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                     height={100}
                     alt={pokemon.name}
                     src={pokemon.sprites.other?.["official-artwork"].front_default || "none"}
-                    />
+                  />
                 </Card>
               </Grid>
             </Grid.Container>
@@ -205,7 +205,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 }
 
@@ -213,10 +213,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { id } = params as { id: string };
 
+  const pokemon = await getPokemonInfo(id)
+
+  if (!pokemon) {
+    return {
+      redirect: {
+        destination: '/404',
+        permanent: false
+      }
+    }
+  }
+
   return {
     props: {
-      pokemon: await getPokemonInfo(id),
-    }
+      pokemon,
+    },
+    revalidate: 86400,
   }
 }
 
