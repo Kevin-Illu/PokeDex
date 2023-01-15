@@ -21,7 +21,8 @@ const FavoritePokemonCard: FC<Props> = ({ id }) => {
         isPressable
         onClick={onClick}
         css={{
-          height: 280,
+          maxHeight: "fit-content",
+          height: 250,
         }}
       >
         <Card.Body css={{

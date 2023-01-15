@@ -69,12 +69,21 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
             wrap: "wrap"
           }}>
             <Grid.Container>
-              <Grid.Container direction="row" alignItems="center" justify="space-between">
+              <Grid.Container css={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: "1rem",
+                wrap: "wrap",
+                marginBottom: "1rem",
+              }}>
                 <Text h1 transform="capitalize" css={{
                   textGradient: "45deg, $blue600 -20%, $pink600 50%",
                 }}>{pokemon.name}</Text>
                 <div style={{
+                  width: "100%",
                   display: "flex",
+                  flexDirection: "row-reverse",
                   justifyContent: "space-between",
                   alignItems: "center",
                   gap: ".8rem"
@@ -98,6 +107,9 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
                 </div>
               </Grid.Container>
               <Grid.Container gap={1}>
+                <Grid>
+                  <Text h4>Types</Text>
+                </Grid>
                 {pokemon.types.map((type, i) =>
                   <Grid key={i}>
                     <Badge color={"secondary"} size={"md"}>

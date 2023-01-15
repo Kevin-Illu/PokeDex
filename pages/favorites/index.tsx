@@ -8,7 +8,7 @@ import FavoritePokemons from "../../components/pokemon/FavoritePokemons";
 
 const FavoritesPage = () => {
 
-  const [favoritePokemons, setFavoritePokemons] = useState<number []>([]);
+  const [favoritePokemons, setFavoritePokemons] = useState<number[]>([]);
 
   useEffect(() => {
     setFavoritePokemons(localFavorites.pokemons());
@@ -17,14 +17,12 @@ const FavoritesPage = () => {
   return (
     <Layout title="Favorite - Pokemons">
       {
-      favoritePokemons.length === 0 
-        ? (<NoFavorites/>)
-        : (
-          <Container lg>
-              <FavoritePokemons pokemons={favoritePokemons}/>
-          </Container>
-        )
-    }
+        favoritePokemons.length === 0
+          ? (<NoFavorites />)
+          : (
+            <FavoritePokemons pokemons={favoritePokemons} />
+          )
+      }
     </Layout>
   )
 }

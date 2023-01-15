@@ -23,7 +23,8 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
         isPressable
         onClick={handleClick}
         css={{
-          height: 280,
+          maxHeight: "fit-content",
+          height: 250,
         }}
       >
         <Card.Body css={{
